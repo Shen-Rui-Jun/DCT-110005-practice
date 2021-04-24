@@ -1,9 +1,11 @@
+import { PostService } from './post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,13 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule,
   ],
-  providers: [],
+  providers: [
+    PostService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
