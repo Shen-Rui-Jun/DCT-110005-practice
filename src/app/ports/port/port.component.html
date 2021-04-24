@@ -1,8 +1,18 @@
-<div class="post-page">
+<!-- <div class="post-page"> -->
+
+<!-- 更優優的做法, 就是善用 RxJS外, 還要避免重複使用類似第 13 行的方式造成重複呼叫 API -->
+<!-- P.S. 雖然可在背後用 shareReplay() 的方式避免重複訂閱  -->
+<div class="post-page" *ngif="article$ | async as article">
 
   <div class="banner">
     <div class="container">
 
+      <!-- <h1>{{article?.title}}</h1> -->
+
+      <!--  更優的做法, 就是善用 RxJS -->
+      <!-- <h1>{{(article$ | async)?.title}}</h1> -->
+
+      <!-- 更優優 -->
       <h1>{{article?.title}}</h1>
 
       <div class="post-meta">

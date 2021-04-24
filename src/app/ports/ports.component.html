@@ -22,7 +22,9 @@
           </ul>
         </div>
 
-        <div class="post-preview" *ngFor="let article of articles">
+        <!-- <div class="post-preview" *ngFor="let article of articles"> -->
+        <!-- 更優解 -->
+        <div class="post-preview" *ngFor="let article of articles$ | async">
           <div class="post-meta">
             <a href="profile.html">
               <img src="http://i.imgur.com/Qr71crq.jpg" />
